@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +25,19 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-require __DIR__.'/auth.php';
+Route::prefix('test')->group(function () {
+
+    Route::prefix('relation')->group(function () {
+
+        Route::get('ServiceToCategory', [
+            TestingController::class,
+            'ServiceToCategory'
+        ]);
+        Route::get('CategoryToService', [
+            TestingController::class,
+            'CategoryToService'
+        ]);
+    });
+});
+
+require __DIR__ . '/auth.php';
