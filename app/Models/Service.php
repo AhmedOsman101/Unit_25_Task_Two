@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Service extends Model {
     use HasFactory;
 
+    public $fillable = [
+        'name',
+        'description',
+        'price',
+        'category_id',
+    ];
+
     /**
      * Get the category that the service belongs to.
      */
