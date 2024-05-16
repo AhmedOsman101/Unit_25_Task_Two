@@ -13,9 +13,9 @@ new #[Layout('layouts.guest')] class extends Component
 {
     public string $name = '';
     public string $email = '';
+    public string $address = '';
     public string $password = '';
     public string $password_confirmation = '';
-    public string $address = '';
 
     /**
      * Handle an incoming registration request.
@@ -77,7 +77,7 @@ new #[Layout('layouts.guest')] class extends Component
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <!-- Name -->
+        <!-- Address -->
         <div class="mt-4">
             <x-input-label for=" address" :value="__('Address')" />
             <x-text-input wire:model="address" id="address" class="block mt-1 w-full" type="text" name="address"
