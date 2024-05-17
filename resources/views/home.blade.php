@@ -19,6 +19,7 @@
                 <livewire:welcome.navigation />
             @endif
 
+            <x-hero class="w-full"/>
             
         </div>
     </body>
