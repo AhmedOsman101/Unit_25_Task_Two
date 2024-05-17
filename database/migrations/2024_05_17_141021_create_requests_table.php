@@ -12,6 +12,11 @@ return new class extends Migration {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->text('description');
+            $table->enum('status', [
+                'completed',
+                'cancelled',
+                'pending'
+            ])->default('pending');
             $table->foreignId('user_id');
             $table->foreignId('service_id');
             $table->timestamps();
