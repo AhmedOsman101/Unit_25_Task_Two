@@ -7,6 +7,12 @@
     text-transform: capitalize;
 }
 
+.icon {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.125em;
+}
+
 @layer components {
     .inputLabel {
         @apply block font-medium text-sm text-gray-700 dark:text-gray-300;

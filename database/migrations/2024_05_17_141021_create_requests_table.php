@@ -9,12 +9,12 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::table('users', function (Blueprint $table) {
-            $table->addColumn(
-                name: 'service_ids',
-                type: 'json'
-            )->nullable()
-                ->after('password');
+        Schema::create('requests', function (Blueprint $table) {
+            $table->id();
+            $table->text('description');
+            $table->foreignId('user_id');
+            $table->foreignId('service_id');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +22,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('service_ids');
-        });
+        Schema::dropIfExists('request_models');
     }
 };
