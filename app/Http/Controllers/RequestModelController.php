@@ -33,7 +33,13 @@ class RequestModelController extends Controller {
      * Store a newly created resource in storage.
      */
     public function store(Request $request) {
-        //
+        try {
+            $request = RequestModel::create($request->all());
+
+            return redirect()->route('dashboard');
+        } catch (\Throwable $error) {
+            return redirect()->withErrors($error->getMessage())->back();
+        }
     }
 
     /**
@@ -81,6 +87,24 @@ class RequestModelController extends Controller {
 
             return redirect()->route('dashboard');
         } catch (\Throwable $error) {
+            return redirect()->withErrors($error->getMessage())->back();
+        }
+    }
+
+    public function cancel($id) {
+        try {
+            $request = RequestModel::find($id);
+
+            $status = $request->status;
+
+            $request->status = $status == 'cancelled' ? 'pending' : 'cancelled';
+            $request->save();
+
+            // dd($request);
+
+            return redirect()->route('dashboard');
+        } catch (\Throwable $error) {
+            dd($error->getMessage());
             return redirect()->withErrors($error->getMessage())->back();
         }
     }

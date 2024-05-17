@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{env('app_name')}}</title>
+    <title>@yield('title', env('APP_NAME'))</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,8 +15,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased">
-    {{ $slot }}
+<body class="font-sans antialiased min-h-screen bg-gray-900">
+    @yield('content')
 </body>
 
 </html>

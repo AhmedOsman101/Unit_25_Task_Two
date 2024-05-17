@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RequestModelController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestingController;
 use Illuminate\Support\Facades\Route;
@@ -17,13 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
-Route::view('dashboard', 'dashboard')
+Route::get('dashboard', [RequestModelController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
 
 Route::prefix('test')->group(function () {
 
@@ -39,5 +37,17 @@ Route::prefix('test')->group(function () {
         ]);
     });
 });
+
+Route::middleware('auth')->group(
+    function () {
+        Route::get('request/{id}', [RequestModelController::class, 'edit'])->name('request.edit');
+        Route::delete('request/{id}', [RequestModelController::class, 'destroy'])->name('request.delete');
+        Route::patch('request/{id}', [RequestModelController::class, 'cancel'])->name('request.cancel');
+        Route::view('profile', 'profile')->name('profile');
+        Route::get('service/{id}', [ServiceController::class, 'show']);
+    }
+);
+
+Route::get('services', [ServiceController::class, 'index'])->name('services');
 
 require __DIR__ . '/auth.php';

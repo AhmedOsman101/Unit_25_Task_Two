@@ -10,7 +10,12 @@ class ServiceController extends Controller {
      * Display a listing of the resource.
      */
     public function index() {
-        //
+        try {
+            $services = Service::all();
+            return view('services', compact('services'));
+        } catch (\Throwable $e) {
+            dd($e->getMessage());
+        }
     }
 
     /**
@@ -30,28 +35,33 @@ class ServiceController extends Controller {
     /**
      * Display the specified resource.
      */
-    public function show(Service $service) {
-        //
+    public function show($id) {
+        try {
+            $service = Service::find($id);
+            return view('service-details', compact('service'));
+        } catch (\Throwable $e) {
+            dd($e->getMessage());
+        }
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Service $service) {
+    public function edit($id) {
         //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Service $service) {
+    public function update(Request $request, $id) {
         //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Service $service) {
+    public function destroy($id) {
         //
     }
 }
