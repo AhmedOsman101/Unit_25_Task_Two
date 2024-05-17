@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class RequestModel extends Model {
     use HasFactory;
+    protected $table = 'requests';
 
     protected $fillable = [
         'description',
@@ -15,7 +16,12 @@ class RequestModel extends Model {
         'service_id',
     ];
 
+
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
+    }
+
+    public function service(): BelongsTo {
+        return $this->belongsTo(Service::class);
     }
 }
