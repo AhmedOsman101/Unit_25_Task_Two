@@ -11,8 +11,10 @@ class Logout {
      */
     public function __invoke(): void {
         Auth::guard('web')->logout();
+        redirect()->route('home');
 
         Session::invalidate();
         Session::regenerateToken();
+
     }
 }
