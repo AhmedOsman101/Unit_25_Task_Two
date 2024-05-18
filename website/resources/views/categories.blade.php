@@ -1,9 +1,15 @@
 @extends('layouts.default')
 
 @section('content')
-@auth
+
+@if (Auth::guard('web')->check())
 <livewire:layout.navigation />
-@endauth
+@else
+
+<livewire:welcome.navigation />
+<div class="w-full h-24"></div>
+@endif
+
 @if (count($categories) > 0)
 @livewire('categories', ['categories' => $categories])
 @else

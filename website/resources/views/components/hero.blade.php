@@ -20,7 +20,8 @@
                 class="px-8 py-3 text-lg font-semibold rounded dark:bg-blue-400 hover:dark:bg-blue-300 transition-colors duration-500  dark:text-gray-900">get
                 started</a>
             <a wire:navigate rel="noopener noreferrer" href="{{route('services')}}"
-                class="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100">view our offers</a>
+                class="px-8 py-3 text-lg font-semibold border hover:dark:border-blue-400 hover:dark:text-blue-400 transition duration-500 rounded dark:border-gray-100">view
+                our offers</a>
         </div>
     </div>
 </section>

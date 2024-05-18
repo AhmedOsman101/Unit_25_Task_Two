@@ -16,6 +16,7 @@ class AuthenticateAdmin {
     public function handle(Request $request, Closure $next): Response {
 
         if (Auth::guard('admin')->check()) {
+            Auth::guard('web')->logout();
             return $next($request);
         }
         return redirect()->route('filament.admin.auth.login');
