@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RequestModelController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestingController;
@@ -45,6 +46,12 @@ Route::middleware('auth')->group(
         Route::patch('request/{id}', [RequestModelController::class, 'cancel'])->name('request.cancel');
         Route::view('profile', 'profile')->name('profile');
         Route::get('service/{id}', [ServiceController::class, 'show']);
+        Route::get('categories', [
+            CategoryController::class,
+            'index'
+        ])
+            ->name('categories');
+        Route::get('categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
     }
 );
 

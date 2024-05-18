@@ -38,7 +38,7 @@ class RequestModelController extends Controller {
 
             return redirect()->route('dashboard');
         } catch (\Throwable $error) {
-            return redirect()->withErrors($error->getMessage())->back();
+            return redirect()->back();
         }
     }
 
@@ -75,7 +75,7 @@ class RequestModelController extends Controller {
 
             return redirect()->route('dashboard');
         } catch (\Throwable $error) {
-            return redirect()->withErrors($error->getMessage())->back();
+            return redirect()->back();
         }
     }
 
@@ -90,7 +90,7 @@ class RequestModelController extends Controller {
 
             return redirect()->route('dashboard');
         } catch (\Throwable $error) {
-            return redirect()->withErrors($error->getMessage())->back();
+            return redirect()->back();
         }
     }
 
@@ -101,14 +101,12 @@ class RequestModelController extends Controller {
             $status = $request->status;
 
             $request->status = $status == 'cancelled' ? 'pending' : 'cancelled';
-            $request->save();
 
-            // dd($request);
+            $request->save();
 
             return redirect()->route('dashboard');
         } catch (\Throwable $error) {
-            dd($error->getMessage());
-            return redirect()->withErrors($error->getMessage())->back();
+            return redirect()->back();
         }
     }
 }

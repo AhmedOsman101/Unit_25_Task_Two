@@ -14,7 +14,6 @@
     <script src="https://kit.fontawesome.com/d7906c2ac4.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireScripts
     @livewireStyles
 </head>
 
@@ -31,6 +30,7 @@
             {{ $slot }}
         </div>
     </div>
+    @livewireScripts
 </body>
 
 </html>
