@@ -11,11 +11,12 @@ Individuals must either drop their computer off at one of the company's offices 
 You have been asked to design a software solution that supports the company's growing needs.
 
 Your software solution must allow customers to:
-- set up a business or individual customer account
-- submit support requests, schedule a repair and get a quote for the cost of the job access a knowledge base that will:
 
-	* diagnose a problem
-	* Provide instructions on how to fix minor hardware and software
+-   set up a business or individual customer account
+-   submit support requests, schedule a repair and get a quote for the cost of the job access a knowledge base that will:
+
+    -   diagnose a problem
+    -   Provide instructions on how to fix minor hardware and software
 
 You may also wish to consider any additional functionality you feel would be useful to the client based on any research you may carry out as part of the initial proposal.
 
@@ -24,20 +25,22 @@ You may also wish to consider any additional functionality you feel would be use
 Your manager has asked you to produce a comprehensive set of documentation that will inform the development and testing of a fullstack solution that will meet the needs of Dern-Support.
 
 You should produce a proposal that includes, as a minimum:
-- an overview of the business context and summary of the problem
-- a description of the proposed solution functional and non-functional requirements key performance indicators (KPIs) that will be used to measure the success of the proposed solution risks and implications of the proposed solution.
+
+-   an overview of the business context and summary of the problem
+-   a description of the proposed solution functional and non-functional requirements key performance indicators (KPIs) that will be used to measure the success of the proposed solution risks and implications of the proposed solution.
 
 You should review your proposal with the client, revise as necessary and gain approval to continue before starting to design you solution.
 
 ## Task A2:
 
 When you have gained approval from the client, you should produce a set of software design documents, which will include, as a minimum:
-- functional and non-functional requirements specifications
-- algorithm design documentation (e.g. flow charts and pseudocode)
-- visual design documentation
-- data requirements design (e.g. entity relationship diagrams (ERDs) and data dictionaries)
-- accessibility and inclusivity considerations (e.g. alternative layouts and support for inclusive technologies)
-- details of components that will be reused/refactored from other solutions or third-party sources.
+
+-   functional and non-functional requirements specifications
+-   algorithm design documentation (e.g. flow charts and pseudocode)
+-   visual design documentation
+-   data requirements design (e.g. entity relationship diagrams (ERDs) and data dictionaries)
+-   accessibility and inclusivity considerations (e.g. alternative layouts and support for inclusive technologies)
+-   details of components that will be reused/refactored from other solutions or third-party sources.
 
 Review your design documents with at least two other people to help you refine and improve them. You must keep a record of any feedback given, along with any changes made. You should also write a justification for the design decisions you have made, and any changes actioned showing how they have helped ensure the planned software solution will meet the requirements identified in the scenario.
 
@@ -49,22 +52,22 @@ Develop the solution based on your designs, ensuring that it makes use of a full
 
 Test your software solution using a number of different methods, including test plans and unit test cases (UTCs) you have written. You should document your tests showing the problems and errors that have been identified and addressed.
 
-Gather and analyse feedback from other people and use it to refine your solution and produce an updated version.
+Gather and analyze feedback from other people and use it to refine your solution and produce an updated version.
 
 Write an evaluation of your solution, considering its efficiency, effectiveness, and the extent to which it meets the requirements in the scenario. Your evaluation needs to be supported by evidence from the development and testing stages. Your evaluation should reach conclusions and suggest ways that the software solution could be developed in the future.
 
 ## Checklist of evidence required
 
-- Software project proposal.
-- Design documents for a full stack solution.
-- Feedback on the documentation/designs collected from others.
-- Improved version of the documentation/design.
-- Written justification of design decisions.
-- Completed software solution (including initial and refined version).
-- Copies of any source code produced.
-- Test documentation and user feedback.
-- Analysis of feedback and evidence of refinement of solution.
-- Evaluation of the development, testing and refinement process.
+-   Software project proposal.
+-   Design documents for a full stack solution.
+-   Feedback on the documentation/designs collected from others.
+-   Improved version of the documentation/design.
+-   Written justification of design decisions.
+-   Completed software solution (including initial and refined version).
+-   Copies of any source code produced.
+-   Test documentation and user feedback.
+-   Analysis of feedback and evidence of refinement of solution.
+-   Evaluation of the development, testing and refinement process.
 
 ## Criteria reference
 
