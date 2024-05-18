@@ -17,8 +17,12 @@ new #[Layout('layouts.main')] class extends Component
     {
         $this->validate();
 
+        
         $this->form->authenticate();
-
+        
+        // logout the admin and make it access the website as a user
+        Auth::guard('admin')->logout();
+        
         Session::regenerate();
 
         $this->redirectIntended(default: RouteServiceProvider::HOME, navigate: true);
@@ -48,7 +52,7 @@ new #[Layout('layouts.main')] class extends Component
             <div class="flex-1">
                 <div class="text-center">
                     <div class="flex justify-center mx-auto">
-                        <a href="{{route('home')}}">
+                        <a wire:navigate href="{{route('home')}}">
                             <x-application-logo class="w-auto h-64" />
                         </a>
                     </div>

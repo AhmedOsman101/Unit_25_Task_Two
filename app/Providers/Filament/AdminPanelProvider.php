@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Http\Middleware\AuthenticateAdmin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -18,15 +19,15 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class AdminPanelProvider extends PanelProvider
-{
-    public function panel(Panel $panel): Panel
-    {
+class AdminPanelProvider extends PanelProvider {
+    public function panel(Panel $panel): Panel {
         return $panel
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
+            ->authGuard('admin')
+            ->authPasswordBroker('admin')
             ->colors([
                 'primary' => Color::Emerald,
             ])
@@ -51,7 +52,7 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                Authenticate::class,
-            ]);
+                AuthenticateAdmin::class,
+            ], isPersistent: true);
     }
 }

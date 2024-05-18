@@ -5,7 +5,7 @@
                 @if (count($requests) > 0)
                 @livewire('requests-table', ['requests' => $requests])
                 @else
-                <x-no-services />
+                <x-no-requests />
                 @endif
             </div>
         </div>

@@ -7,7 +7,7 @@
             class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
     </div>
     <div class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-        <h1 class="text-5xl font-bold leading-none sm:text-4xl">For Reliable and Expert IT Support, <a
+        <h1 class="text-5xl font-bold leading-none sm:text-4xl">For Reliable and Expert IT Support, <a wire:navigate
                 href="{{route('home')}}" class="dark:text-blue-400">{{env('app_name')}}</a> is Always Here for You.
 
         </h1>
@@ -16,10 +16,10 @@
         </p>
         <div
             class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <a rel="noopener noreferrer" href="{{route('services')}}"
+            <a wire:navigate rel="noopener noreferrer" href="{{route('services')}}"
                 class="px-8 py-3 text-lg font-semibold rounded dark:bg-blue-400 hover:dark:bg-blue-300 transition-colors duration-500  dark:text-gray-900">get
                 started</a>
-            <a rel="noopener noreferrer" href="{{route('services')}}"
+            <a wire:navigate rel="noopener noreferrer" href="{{route('services')}}"
                 class="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100">view our offers</a>
         </div>
     </div>

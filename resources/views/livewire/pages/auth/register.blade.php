@@ -38,7 +38,12 @@ new #[Layout('layouts.main')] class extends Component
 
         event(new Registered($user = User::create($validated)));
 
+        
+        
         Auth::login($user);
+        
+        // logout the admin and make it access the website as a user
+        Auth::guard('admin')->logout();
 
         $this->redirect(RouteServiceProvider::HOME, navigate: true);
     }
