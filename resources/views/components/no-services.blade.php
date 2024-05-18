@@ -15,6 +15,6 @@
         </svg>
         <p class="text-3xl">Looks like you have no requests made yet</p>
         <a rel="noopener noreferrer" href="{{route('services')}}"
-            class="px-8 py-3 font-semibold rounded dark:bg-blue-600 hover:dark:bg-blue-500 dark:text-gray-50">Back to homepage</a>
+            class="px-8 py-3 font-semibold transition-colors duration-500 rounded dark:bg-blue-600 hover:dark:bg-blue-500 dark:text-gray-50">Explore our services</a>
     </div>
 </section>

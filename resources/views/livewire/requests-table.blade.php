@@ -1,7 +1,3 @@
-@empty($requests)
-<x-no-services />
-@endempty
-
 <table class="mt-4 w-full min-w-max table-auto text-left">
     <thead>
         <tr>

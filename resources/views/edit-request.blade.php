@@ -5,5 +5,5 @@
 @auth
 <livewire:layout.navigation />
 @endauth
-
+<livewire:edit-request :request="$request" :description="$description" />
 @endsection

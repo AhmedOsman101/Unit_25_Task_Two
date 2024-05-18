@@ -4,24 +4,25 @@ namespace App\Livewire;
 
 use App\Models\RequestModel;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Service extends Component {
 
     public $service;
+
+    #[Validate('required')]
     public $description;
 
     public function createNewRequest() {
-        try {
-            $request = RequestModel::create([
-                'description' => $this->description,
-                'user_id' => Auth::user()->id,
-                'service_id' => $this->service->id,
-            ]);
-            return redirect()->route('dashboard');
-        } catch (\Throwable $error) {
-            return redirect()->withErrors($error->getMessage())->back();
-        }
+
+        $this->validate();
+        $request = RequestModel::create([
+            'description' => $this->description,
+            'user_id' => Auth::user()->id,
+            'service_id' => $this->service->id,
+        ]);
+        return redirect()->route('dashboard');
     }
 
     public function render() {

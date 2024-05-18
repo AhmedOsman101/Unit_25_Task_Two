@@ -12,12 +12,17 @@
                         <span class="mr-3">Book your service now</span>
                     </div>
                     <div class="relative">
-                        <x-text-input placeholder="Descripe your problem" wire:model="description" />
+                        <x-text-input class="w-full lowercase" placeholder="Descripe your problem" name="description"
+                            wire:model="description" />
+                        @error('description')
+                        <x-input-error type="text" :messages="$message" class="mt-2 bg-gray-900 border-none" />
+                        @enderror
+
                     </div>
                 </div>
                 <div class="flex flex-col gap-4">
                     <div id="individual-selection" class="flex">
-                        <button wire:click="createNewRequest()"
+                        <button type="button" wire:click="createNewRequest"
                             class="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Submit</button>
                     </div>
                 </div>

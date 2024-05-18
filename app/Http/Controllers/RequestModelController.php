@@ -53,10 +53,13 @@ class RequestModelController extends Controller {
      * Show the form for editing the specified resource.
      */
     public function edit($id) {
+        $request = RequestModel::find($id);
+        // dd($request);
         return view(
             'edit-request',
             [
-                'id' => $id
+                'request' => $request,
+                'description' => $request->description,
             ]
         );
     }
