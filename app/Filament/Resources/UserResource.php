@@ -23,7 +23,10 @@ class UserResource extends Resource {
         return $form
             ->schema([
                 TextInput::make('name')->required(),
-                TextInput::make('email')->email()->required(),
+                TextInput::make('email')
+                    ->unique(ignoreRecord: true)
+                    ->email()
+                    ->required(),
                 TextInput::make('address')->required(),
                 TextInput::make('password')
                     ->password()
@@ -39,6 +42,11 @@ class UserResource extends Resource {
                 TextColumn::make('name')->sortable(),
                 TextColumn::make('email'),
                 TextColumn::make('address'),
+                TextColumn::make('requests_count')
+                    ->label('Requests Made')
+                    ->alignCenter()
+                    ->counts('requests')
+                    ->sortable(),
             ])
             ->filters([
                 //

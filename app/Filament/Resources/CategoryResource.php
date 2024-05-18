@@ -24,6 +24,7 @@ class CategoryResource extends Resource {
         return $form
             ->schema([
                 TextInput::make('name')
+                    ->unique(ignoreRecord: true)
                     ->label('Category Name')
                     ->required(),
             ]);
@@ -32,9 +33,16 @@ class CategoryResource extends Resource {
     public static function table(Table $table): Table {
         return $table
             ->columns([
-                TextColumn::make('id'),
+                TextColumn::make('id')
+                    ->alignCenter(),
                 TextColumn::make('name')
                     ->label('Category Name')
+                    ->alignCenter()
+                    ->sortable(),
+                TextColumn::make('services_count')
+                    ->label('Services Available')
+                    ->counts('services')
+                    ->alignCenter()
                     ->sortable(),
             ])
             ->filters([
