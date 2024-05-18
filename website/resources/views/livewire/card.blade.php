@@ -23,7 +23,7 @@
             </p>
             @endisset
             <a wire:navigate href="{{$url}}"
-                class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                class="transition-colors duration-500 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
                 Show more...
                 <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">

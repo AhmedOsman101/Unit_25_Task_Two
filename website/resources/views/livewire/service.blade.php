@@ -21,9 +21,13 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <div id="individual-selection" class="flex">
+                    <div id="individual-selection" class="flex flex-col gap-y-3">
+                        <div class="flex items-center transition-colors duration-500">
+                            <span class="mr-2">price:</span>
+                            <span class="mr-3 text-emerald-400">${{$service->price}}</span>
+                        </div>
                         <button type="button" wire:click="createNewRequest"
-                            class="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Submit</button>
+                            class="transition-colors duration-500 flex w-fit text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Submit</button>
                     </div>
                 </div>
             </div>
