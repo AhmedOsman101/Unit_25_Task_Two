@@ -257,14 +257,11 @@ The process of requirements gathering ensures that the software solution will me
     -   **Categories:**
 
         -   View all Categories:
-            ![](images/unsortedServices)
-            ![](images/sortServices)
+            ![](images/unsortedservices.png)
         -   Add new Category:
             ![](images/addCategory.png)
         -   Edit Category:
             ![](images/editCategory.png)
-        -   Delete Category:
-            ![](images/deleteCategory.png)
         -   Mass Delete Categories:
             ![](images/massDeleteCategories.png)
 
