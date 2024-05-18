@@ -29,11 +29,8 @@ new #[Layout('layouts.main')] class extends Component
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="flex justify-center h-screen">
 
-        {{-- <img class="hidden object-cover lg:block lg:w-1/2 max-h-screen"
-            src="https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
-        --}}
         <div class="hidden object-cover lg:block lg:w-1/2 max-h-screen bg-cover bg-center bg-no-repeat"
-            style="background-image: url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)">
+            style="background-image: url({{ asset('images/login.png') }})">
             <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                 <div>
                     <h2 class="text-2xl font-bold text-white sm:text-3xl">{{env('app_name')}}</h2>
