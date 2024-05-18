@@ -14,6 +14,7 @@ class RequestModel extends Model {
         'description',
         'user_id',
         'service_id',
+        'status'
     ];
 
 
