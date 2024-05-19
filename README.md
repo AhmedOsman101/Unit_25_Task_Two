@@ -230,9 +230,9 @@ The process of requirements gathering ensures that the software solution will me
             ![](Documentaion/Images/addrequest2.png)
         -   Edit cancelled request (disabled):
             ![](Documentaion/Images/editcancelledrequest.png)
-        -   Edit completed request:
+        -   Edit completed request (disabled):
             ![](Documentaion/Images/editcompletedrequest.png)
-        -   Edit pending request (disabled):
+        -   Edit pending request (allowed):
             ![](Documentaion/Images/editpendingrequest.png)
         -   Delete request (allowed for all):
             ![](Documentaion/Images/deleterequest.png)
