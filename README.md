@@ -257,7 +257,7 @@ The process of requirements gathering ensures that the software solution will me
     -   **Categories:**
 
         -   View all Categories:
-            ![](Documentaion/Images/sortedCategories.png)
+            ![](Documentaion/Images/sortCategories.png)
         -   Add new Category:
             ![](Documentaion/Images/addCategory.png)
         -   Edit Category:
