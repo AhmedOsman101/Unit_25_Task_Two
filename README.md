@@ -219,7 +219,7 @@ The process of requirements gathering ensures that the software solution will me
     _Examples of the admin dashboard:_
 
     -   **admin dashboard welcome page:**
-        ![](images/adminDashboard.png)
+        ![](../images/adminDashboard.png)
 
     -   **Requests:**
 
