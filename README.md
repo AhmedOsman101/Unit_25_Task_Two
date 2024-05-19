@@ -223,8 +223,8 @@ The process of requirements gathering ensures that the software solution will me
 
     -   **Requests:**
 
-        -   View all Services:
-            ![](Documentaion/Images/allrequests.png)
+        -   View all requests:
+            ![](Documentaion/Images/allRequests.png)
         -   Add new request:
             ![](Documentaion/Images/addRequest1.png)
             ![](Documentaion/Images/addrequest2.png)
