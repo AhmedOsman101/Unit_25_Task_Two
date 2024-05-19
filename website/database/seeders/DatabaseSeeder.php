@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder {
         // Call individual seeders
         $this->call([
             CategorySeeder::class,
-            ServiceSeeder::class,
             AdminSeeder::class,
         ]);
     }
