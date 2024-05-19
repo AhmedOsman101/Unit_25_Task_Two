@@ -219,149 +219,149 @@ The process of requirements gathering ensures that the software solution will me
     _Examples of the admin dashboard:_
 
     -   **admin dashboard welcome page:**
-        ![alt text](Documentaion/images/adminDashboard.png)
+        ![alt text](Documentaion/Images/adminDashboard.png)
 
     -   **Requests:**
 
         -   View all Services:
-            ![](Documentaion/images/allrequests.png)
+            ![](Documentaion/Images/allrequests.png)
         -   Add new request:
-            ![](Documentaion/images/addRequest1.png)
-            ![](Documentaion/images/addrequest2.png)
+            ![](Documentaion/Images/addRequest1.png)
+            ![](Documentaion/Images/addrequest2.png)
         -   Edit cancelled request (disabled):
-            ![](Documentaion/images/editcancelledrequest.png)
+            ![](Documentaion/Images/editcancelledrequest.png)
         -   Edit completed request:
-            ![](Documentaion/images/editcompletedrequest.png)
+            ![](Documentaion/Images/editcompletedrequest.png)
         -   Edit pending request (disabled):
-            ![](Documentaion/images/editpendingrequest.png)
+            ![](Documentaion/Images/editpendingrequest.png)
         -   Delete request (allowed for all):
-            ![](Documentaion/images/deleterequest.png)
+            ![](Documentaion/Images/deleterequest.png)
         -   Mass Delete requests:
-            ![](Documentaion/images/massrequestdelete.png)
+            ![](Documentaion/Images/massrequestdelete.png)
 
     -   **Services:**
 
         -   View all Services:
-            ![](Documentaion/images/allServices.png)
+            ![](Documentaion/Images/allServices.png)
         -   Add new Service:
-            ![](Documentaion/images/addService.png)
+            ![](Documentaion/Images/addService.png)
         -   Edit Service:
-            ![](Documentaion/images/editService.png)
+            ![](Documentaion/Images/editService.png)
         -   Delete Service:
-            ![](Documentaion/images/deleteService.png)
-            ![](Documentaion/images/deleteServiceNotify.png)
+            ![](Documentaion/Images/deleteService.png)
+            ![](Documentaion/Images/deleteServiceNotify.png)
         -   Mass Delete Services:
-            ![](Documentaion/images/MassDeleteSerivces.png)
-            ![](Documentaion/images/MServiceC.png)
+            ![](Documentaion/Images/MassDeleteSerivces.png)
+            ![](Documentaion/Images/MServiceC.png)
 
     -   **Categories:**
 
         -   View all Categories:
-            ![](Documentaion/images/unsortedservices.png)
+            ![](Documentaion/Images/unsortedservices.png)
         -   Add new Category:
-            ![](Documentaion/images/addCategory.png)
+            ![](Documentaion/Images/addCategory.png)
         -   Edit Category:
-            ![](Documentaion/images/editCategory.png)
+            ![](Documentaion/Images/editCategory.png)
         -   Mass Delete Categories:
-            ![](Documentaion/images/massDeleteCategories.png)
+            ![](Documentaion/Images/massDeleteCategories.png)
 
     -   **Users:**
         -   View all Users:
-            ![](Documentaion/images/allUsers.png)
+            ![](Documentaion/Images/allUsers.png)
         -   Add new User:
-            ![](Documentaion/images/addUser.png)
+            ![](Documentaion/Images/addUser.png)
         -   Edit User:
-            ![](Documentaion/images/editUser.png)
+            ![](Documentaion/Images/editUser.png)
         -   Delete User:
-            ![](Documentaion/images/deleteUser.png)
+            ![](Documentaion/Images/deleteUser.png)
         -   Mass Delete Users:
-            ![](Documentaion/images/selectVisibleUsers.png)
-            ![](Documentaion/images/selectAllUsers.png)
+            ![](Documentaion/Images/selectVisibleUsers.png)
+            ![](Documentaion/Images/selectAllUsers.png)
 
     _Examples of admin login:_
 
-    ![](Documentaion/images/adminlogin.png)
+    ![](Documentaion/Images/adminlogin.png)
 
     _Examples of validation messages:_
-    ![](Documentaion/images/adminloginvalidation.png)
+    ![](Documentaion/Images/adminloginvalidation.png)
 
     _Examples of customer login:_
 
-    ![](Documentaion/images/userlogin.png)
+    ![](Documentaion/Images/userlogin.png)
 
     _Examples of user login validation messages:_
 
-    ![](Documentaion/images/userloginvalidation.png)
+    ![](Documentaion/Images/userloginvalidation.png)
 
     _Examples of customer registration:_
 
-    ![](Documentaion/images/userregister1.png)
-    ![](Documentaion/images/userregister2.png)
+    ![](Documentaion/Images/userregister1.png)
+    ![](Documentaion/Images/userregister2.png)
 
     _Examples of user login validation messages:_
 
-    ![](Documentaion/images/userregistervalidation.png)
+    ![](Documentaion/Images/userregistervalidation.png)
 
     _Examples of Landing page:_
 
-    ![](Documentaion/images/landing1.png)
-    ![](Documentaion/images/landing2.png)
+    ![](Documentaion/Images/landing1.png)
+    ![](Documentaion/Images/landing2.png)
 
     _Examples of the services page:_
 
     -   View all services:
-        ![](Documentaion/images/services.png)
+        ![](Documentaion/Images/services.png)
     -   View all services (no services available):
-        ![](Documentaion/images/noservices.png)
+        ![](Documentaion/Images/noservices.png)
 
     _Examples of the service details page:_
 
-    ![](Documentaion/images/service.png)
+    ![](Documentaion/Images/service.png)
 
     _Examples of the categories page:_
 
     -   View all categories:
-        ![](Documentaion/images/categories.png)
+        ![](Documentaion/Images/categories.png)
     -   View all categories (no categories available):
-        ![](Documentaion/images/nocategories.png)
+        ![](Documentaion/Images/nocategories.png)
 
     _Examples of the services by category page:_
 
-    ![](Documentaion/images/category.png)
+    ![](Documentaion/Images/category.png)
 
     _Examples of the user dashboard:_
 
     -   View all requests:
-        ![](Documentaion/images/userdashboard1.png)
+        ![](Documentaion/Images/userdashboard1.png)
     -   View all requests (no requests made yet):
-        ![](Documentaion/images/norequests.png)
+        ![](Documentaion/Images/norequests.png)
     -   Restore cancelled requests:
-        ![](Documentaion/images/userdashboard2.png)
+        ![](Documentaion/Images/userdashboard2.png)
     -   Delete cancelled request:
-        ![](Documentaion/images/userdashboard3.png)
+        ![](Documentaion/Images/userdashboard3.png)
     -   Delete completed request:
-        ![](Documentaion/images/userdashboard4.png)
+        ![](Documentaion/Images/userdashboard4.png)
     -   Edit existing (pending) request:
-        ![](Documentaion/images/editrequest.png)
+        ![](Documentaion/Images/editrequest.png)
 
     _Examples of the user profile page:_
 
     -   Edit basic info:
-        ![](Documentaion/images/editprofile.png)
+        ![](Documentaion/Images/editprofile.png)
     -   Change password (successful):
-        ![](Documentaion/images/changepassword.png)
+        ![](Documentaion/Images/changepassword.png)
     -   Change password (incorrect password):
-        ![](Documentaion/images/wrongpassword.png)
+        ![](Documentaion/Images/wrongpassword.png)
     -   Change password (passwords not matching):
-        ![](Documentaion/images/nomatchpassword.png)
+        ![](Documentaion/Images/nomatchpassword.png)
     -   delete account button:
-        ![](Documentaion/images/deleteaccount1.png)
+        ![](Documentaion/Images/deleteaccount1.png)
     -   delete account modal:
-        ![](Documentaion/images/deleteaccount2.png)
+        ![](Documentaion/Images/deleteaccount2.png)
     -   delete account modal (wrong password):
-        ![](Documentaion/images/deleteaccount3.png)
+        ![](Documentaion/Images/deleteaccount3.png)
     -   delete account modal (success redirected to the landing page):
-        ![](Documentaion/images/landing1.png)
+        ![](Documentaion/Images/landing1.png)
 
 ### Implementation Phase:
 
@@ -410,11 +410,11 @@ The process of requirements gathering ensures that the software solution will me
 
 *   examples on testing using JMeter:
 
-    ![](Documentaion/images/image-28.png)
+    ![](Documentaion/Images/image-28.png)
 
-    ![](Documentaion/images/image-29.png)
+    ![](Documentaion/Images/image-29.png)
 
-    ![](Documentaion/images/image-30.png)
+    ![](Documentaion/Images/image-30.png)
 
 ### Deployment phase:
 
@@ -505,7 +505,7 @@ The process of requirements gathering ensures that the software solution will me
 
 ### Entity Relationship Diagram (ERD)
 
-![alt text](Documentaion/images/erd.png)
+![alt text](Documentaion/Images/erd.png)
 
 # Analysis
 
