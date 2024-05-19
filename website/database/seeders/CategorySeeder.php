@@ -2,14 +2,18 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder {
     /**
      * Run the database seeds.
      */
     public function run(): void {
+        // Truncate the categories table to avoid duplicates
+        Category::truncate();
+
         $categories = [
             ['name' => 'Computer Repair'],
             ['name' => 'Laptop Repair'],
