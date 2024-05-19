@@ -12,7 +12,7 @@ return new class extends Migration {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->text('description')->nullable();
+            $table->string('description')->nullable();
             $table->unsignedDouble('price', places: 2);
             $table->foreignId('category_id');
             $table->timestamps();
