@@ -10,7 +10,9 @@ return new class extends Migration {
      */
     public function up(): void {
         Schema::table('admins', function (Blueprint $table) {
-            $table->boolean('is_super_admin')->default(false)->after('password');
+            $table->boolean('is_super_admin')
+                ->default(false)
+                ->after('password');
         });
     }
 

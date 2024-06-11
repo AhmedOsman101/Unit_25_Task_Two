@@ -3,20 +3,16 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\RequestResource\Pages;
-use App\Filament\Resources\RequestResource\RelationManagers;
 use App\Models\RequestModel;
 use App\Models\Service;
 use App\Models\User;
-use Filament\Forms;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class RequestResource extends Resource {
     protected static ?string $model = RequestModel::class;
@@ -33,7 +29,8 @@ class RequestResource extends Resource {
 
         return $form
             ->schema([
-                TextInput::make('description')
+                Textarea::make('description')
+                    ->maxLength(255)
                     ->required()
                     ->disabled(fn ($record) => $record && $record->status !== 'pending'),
                 Select::make('status') // Add a select input for category

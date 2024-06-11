@@ -4,11 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
-use Filament\Forms\Components\Checkbox;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -22,14 +19,18 @@ class UserResource extends Resource {
     public static function form(Form $form): Form {
         return $form
             ->schema([
-                TextInput::make('name')->required(),
+                TextInput::make('name')
+                    ->maxLength(255)
+                    ->required(),
                 TextInput::make('email')
                     ->unique(ignoreRecord: true)
                     ->email()
+                    ->maxLength(255)
                     ->required(),
                 TextInput::make('address')->required(),
                 TextInput::make('password')
                     ->password()
+                    ->maxLength(255)
                     ->required()
                     ->visibleOn('create'),
             ]);
