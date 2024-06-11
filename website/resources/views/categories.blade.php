@@ -10,7 +10,7 @@
 <div class="w-full h-24"></div>
 @endif
 
-@if (count($categories) > 0)
+@if ( count($categories) > 0 )
 @livewire('categories', ['categories' => $categories])
 @else
 <div class="py-12 dark:text-gray-100">

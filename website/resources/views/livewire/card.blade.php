@@ -1,24 +1,23 @@
 <div class="max-w-2xl mx-auto mt-5 flex flex-col items-center relative" style="align-self: normal">
 
     @php
-    $url = "/" . $type . "/" . "$item->id";
+    $url = "/$type/$item->id";
     @endphp
     <div class="bg-gray-800 shadow-md border border-gray-700 rounded-lg max-w-sm">
-        <a wire:navigate :href="$url">
-            <img class="rounded-t-lg" src="{{asset('images/service.png')}}" :alt="$type">
+        <a wire:navigate href="{{$url}}">
+            <img class="rounded-t-lg cursor-pointer" src="{{asset('images/service.png')}}" :alt="$type">
         </a>
         <div class="p-5">
-            <a wire:navigate :href="$url">
+            <a wire:navigate href="{{$url}}">
                 <h5 class="text-white font-bold text-2xl tracking-tight mb-2">{{$item->name}}
                 </h5>
             </a>
             @isset($item->description)
-            <p class="font-normal text-gray-400 mb-3">
+            <p class="text-gray-400 mb-3 border">
                 @php
                 $limit = 80;
                 $string = $item->description;
-                echo (strlen($string) > $limit) ? substr($string, 0, $limit) . '...' : $string . str_repeat("&nbsp;",
-                ($limit - strlen($string)+1));
+                echo (strlen($string) > $limit) ? substr($string, 0, $limit) . '...' : $string . "\n" . str_repeat("&nbsp;", ($limit - strlen($string)));
                 @endphp
             </p>
             @endisset
