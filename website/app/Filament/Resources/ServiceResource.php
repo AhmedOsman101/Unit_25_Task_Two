@@ -29,7 +29,7 @@ class ServiceResource extends Resource {
                 TextInput::make('name')
                     ->required()
                     ->unique(ignoreRecord: true)
-                    ->maxLength(255)
+                    ->maxLength(28)
                     ->label('Service Name'),
                 Textarea::make('description')->maxLength(255),
                 TextInput::make('price')
