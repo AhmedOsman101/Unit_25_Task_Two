@@ -3,7 +3,6 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RequestModelController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TestingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,72 +18,52 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
-Route::middleware([
-    'auth',
-    'verified'
-])->get('dashboard', [
-    RequestModelController::class,
-    'index'
-])->name('dashboard');
+Route::middleware(['auth', 'verified'])
+     ->get('dashboard', [
+       RequestModelController::class, 'index'])->name('dashboard');
 
-
-Route::prefix('test')->group(function () {
-
-    Route::prefix('relation')->group(function () {
-
-        Route::get('ServiceToCategory', [
-            TestingController::class,
-            'ServiceToCategory'
-        ]);
-
-        Route::get('CategoryToService', [
-            TestingController::class,
-            'CategoryToService'
-        ]);
-    });
-});
 
 Route::middleware('auth')->group(
-    function () {
+  function () {
 
-        Route::view('profile', 'profile')->name('profile');
+    Route::view('profile', 'profile')->name('profile');
 
 
-        Route::get('request/{id}', [
-            RequestModelController::class,
-            'edit'
-        ])->name('request.edit');
+    Route::get('request/{id}', [
+      RequestModelController::class,
+      'edit',
+    ])->name('request.edit');
 
-        Route::delete('request/{id}', [
-            RequestModelController::class,
-            'destroy'
-        ])->name('request.delete');
+    Route::delete('request/{id}', [
+      RequestModelController::class,
+      'destroy',
+    ])->name('request.delete');
 
-        Route::patch('request/{id}', [
-            RequestModelController::class,
-            'cancel'
-        ])->name('request.cancel');
+    Route::patch('request/{id}', [
+      RequestModelController::class,
+      'cancel',
+    ])->name('request.cancel');
 
-        Route::get('service/{id}', [
-            ServiceController::class,
-            'show'
-        ]);
-    }
+    Route::get('service/{id}', [
+      ServiceController::class,
+      'show',
+    ]);
+  }
 );
 
 Route::get('categories', [
-    CategoryController::class,
-    'index'
+  CategoryController::class,
+  'index',
 ])->name('categories');
 
 Route::get('categories/{id}', [
-    CategoryController::class,
-    'show'
+  CategoryController::class,
+  'show',
 ])->name('categories.show');
 
 Route::get('services', [
-    ServiceController::class,
-    'index'
+  ServiceController::class,
+  'index',
 ])->name('services');
 
 require __DIR__ . '/auth.php';

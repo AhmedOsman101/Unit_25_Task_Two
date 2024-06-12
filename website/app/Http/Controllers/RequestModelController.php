@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\RequestModel;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Throwable;
 
 class RequestModelController extends Controller {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request) {
+    public function index(Request $request): View|RedirectResponse {
         $requests = RequestModel::all()
             ->where(
                 'user_id',
@@ -23,38 +26,25 @@ class RequestModelController extends Controller {
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create() {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {
+    public function store(Request $request): RedirectResponse {
         try {
             $request = RequestModel::create($request->all());
 
             return redirect()->route('dashboard');
-        } catch (\Throwable $error) {
-            return redirect()->back();
+        } catch (Throwable $error) {
+            redirect()->back()->with('error', $error->getMessage());
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(RequestModel $requestModel) {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id) {
+    public function edit($id): View {
         $request = RequestModel::find($id);
-        // dd($request);
+
         return view(
             'edit-request',
             [
@@ -67,46 +57,46 @@ class RequestModelController extends Controller {
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id): RedirectResponse {
         try {
-            $request = RequestModel::find($id);
+            $record = RequestModel::find($id);
 
-            $request->update($request->all());
+            $record->update($request->all());
 
             return redirect()->route('dashboard');
-        } catch (\Throwable $error) {
-            return redirect()->back();
+        } catch (Throwable $error) {
+            redirect()->back()->with('error', $error->getMessage());
         }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id) {
+    public function destroy($id): RedirectResponse {
         try {
             $request = RequestModel::find($id);
 
             $request->delete();
 
             return redirect()->route('dashboard');
-        } catch (\Throwable $error) {
-            return redirect()->back();
+        } catch (Throwable $error) {
+            redirect()->back()->with('error', $error->getMessage());
         }
     }
 
-    public function cancel($id) {
+    public function cancel($id): RedirectResponse {
         try {
             $request = RequestModel::find($id);
 
             $status = $request->status;
 
-            $request->status = $status == 'cancelled' ? 'pending' : 'cancelled';
+            $request->status = $status === 'cancelled' ? 'pending' : 'cancelled';
 
             $request->save();
 
             return redirect()->route('dashboard');
-        } catch (\Throwable $error) {
-            return redirect()->back();
+        } catch (Throwable $error) {
+            redirect()->back()->with('error', $error->getMessage());
         }
     }
 }

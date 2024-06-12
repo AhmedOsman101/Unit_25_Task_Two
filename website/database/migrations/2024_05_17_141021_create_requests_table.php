@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
+            $table->string('description', 255);
             $table->enum('status', [
                 'completed',
                 'cancelled',

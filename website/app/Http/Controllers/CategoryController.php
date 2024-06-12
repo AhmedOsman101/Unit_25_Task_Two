@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Service;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class CategoryController extends Controller {
     /**
      * Display a listing of the resource.
      */
-    public function index() {
+    public function index(): View|RedirectResponse {
         try {
             $categories = Category::all();
-
             return view('categories', compact('categories'));
         } catch (\Throwable $e) {
             return redirect()->back();
@@ -23,7 +23,7 @@ class CategoryController extends Controller {
     /**
      * Display the specified resource.
      */
-    public function show($id) {
+    public function show($id): View|RedirectResponse {
         try {
             $services = Service::all()->where('category_id', $id);
 

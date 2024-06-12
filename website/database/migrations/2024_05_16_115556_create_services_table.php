@@ -11,9 +11,9 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('description')->nullable();
-            $table->unsignedDouble('price', places: 2);
+            $table->string('name', 28)->unique();
+            $table->string('description', 255)->nullable();
+            $table->unsignedDecimal('price');
             $table->foreignId('category_id');
             $table->timestamps();
         });
