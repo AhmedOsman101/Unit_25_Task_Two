@@ -321,7 +321,7 @@ The process of requirements gathering ensures that the software solution will me
     _Examples of user login validation messages:_
 
     ![](Documentaion/Images/userloginvalidation.png)
-    <br />>
+    <br />
 
     _Examples of user reset password:_
 
