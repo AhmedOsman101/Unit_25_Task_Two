@@ -13,11 +13,22 @@ class RequestModelController extends Controller {
      * Display a listing of the resource.
      */
     public function index(Request $request): View|RedirectResponse {
-        $requests = RequestModel::all()
+        $requests = RequestModel::select(['id', 'description', 'status', 'service_id'])
+            ->with([
+                'service' => function ($query) {
+                    $query->select('id', 'name', 'price', 'category_id')->with([
+                        'category' => function ($query) {
+                            $query->select('id', 'name');
+                        }
+                    ]);
+                }
+            ])
             ->where(
                 'user_id',
                 $request->user()->id
-            );
+            )->get();
+
+        // dd($requests->toArray());
 
         return view(
             'dashboard',
@@ -28,10 +39,9 @@ class RequestModelController extends Controller {
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse {
+    public function store(Request $request) {
         try {
             $request = RequestModel::create($request->all());
-
             return redirect()->route('dashboard');
         } catch (Throwable $error) {
             redirect()->back()->with('error', $error->getMessage());
@@ -57,7 +67,7 @@ class RequestModelController extends Controller {
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id): RedirectResponse {
+    public function update(Request $request, $id) {
         try {
             $record = RequestModel::find($id);
 
@@ -72,7 +82,7 @@ class RequestModelController extends Controller {
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id): RedirectResponse {
+    public function destroy($id) {
         try {
             $request = RequestModel::find($id);
 
@@ -84,7 +94,7 @@ class RequestModelController extends Controller {
         }
     }
 
-    public function cancel($id): RedirectResponse {
+    public function cancel($id) {
         try {
             $request = RequestModel::find($id);
 

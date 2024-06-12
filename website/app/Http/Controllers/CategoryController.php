@@ -13,7 +13,9 @@ class CategoryController extends Controller {
      */
     public function index(): View|RedirectResponse {
         try {
-            $categories = Category::withCount('services')->get();
+            $categories = Category::select(['id', 'name'])
+                ->withCount('services')
+                ->get();
             return view('categories', compact('categories'));
         } catch (\Throwable $e) {
             return redirect()->back();

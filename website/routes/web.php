@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RequestModelController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Middleware\AuthenticateUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,16 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
-Route::middleware(['auth', 'verified'])
-     ->get('dashboard', [
-       RequestModelController::class, 'index'])->name('dashboard');
+Route::middleware([AuthenticateUser::class, 'verified'])
+  ->get('dashboard', [
+    RequestModelController::class, 'index'
+  ])->name('dashboard');
 
 
-Route::middleware('auth')->group(
+Route::middleware(AuthenticateUser::class)->group(
   function () {
 
     Route::view('profile', 'profile')->name('profile');
-
 
     Route::get('request/{id}', [
       RequestModelController::class,
