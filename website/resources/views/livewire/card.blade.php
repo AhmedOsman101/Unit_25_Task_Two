@@ -24,6 +24,12 @@
                 </p>
             </div>
             <div class="flex justify-start">
+                {{-- in case that the category doesn't have any registered services --}}
+                @if (isset($item->services_count) && $item->services_count === 0)
+                <button class="cardBtn mt-2 disabled:bg-gray-800 disabled:border disabled:cursor-not-allowed" disabled>
+                    comming soon 😊
+                </button>
+                @else
                 <a class="cardBtn mt-2" wire:navigate href="{{$url}}">
                     Show more...
                     <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -34,6 +40,8 @@
                         </path>
                     </svg>
                 </a>
+                @endif
+
             </div>
         </div>
     </div>

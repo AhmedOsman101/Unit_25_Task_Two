@@ -13,7 +13,7 @@ class CategoryController extends Controller {
      */
     public function index(): View|RedirectResponse {
         try {
-            $categories = Category::all();
+            $categories = Category::withCount('services')->get();
             return view('categories', compact('categories'));
         } catch (\Throwable $e) {
             return redirect()->back();
