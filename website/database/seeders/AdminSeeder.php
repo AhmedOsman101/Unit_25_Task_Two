@@ -16,7 +16,7 @@ class AdminSeeder extends Seeder {
 
         // Array of admin data
         $admins = [
-            
+
             [
                 "name" => "superadmin",
                 "email" => "root@mail.com",

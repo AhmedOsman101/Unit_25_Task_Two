@@ -2,7 +2,7 @@
     @php
     $url = "/$type/$item->id";
 
-    $limit = 82;
+    $limit = 78;
     $string = $item->description;
     if (strlen($string) > $limit) $string = substr($string, 0, $limit) . '...';
 
