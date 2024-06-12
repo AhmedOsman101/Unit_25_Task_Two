@@ -1,21 +1,3 @@
-<?php
-
-use App\Livewire\Actions\Logout;
-use Livewire\Volt\Component;
-
-new class extends Component
-{
-    /**
-     * Log the current user out of the application.
-     */
-    public function logout(Logout $logout): void
-    {
-        $logout();
-
-        $this->redirect('/', navigate: true);
-    }
-}; ?>
-
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,11 +53,16 @@ new class extends Component
                         </x-dropdown-link>
 
                         <!-- Authentication -->
-                        <button wire:click="logout" class="w-full text-start">
-                            <x-dropdown-link>
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </button>
+                        <form action="{{route('logout')}}" method="post"
+                            class="w-full hover:text-gray-200  dark:hover:bg-gray-800">
+                            <button type="submit"
+                                class="text-start font-light text-sm block w-full pl-4 text-gray-300 py-2 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out">
+                                {{-- <x-responsive-nav-link class="hover:bg-inherit"> --}}
+                                    {{ __('Log Out') }}
+                                    {{-- </x-responsive-nav-link> --}}
+                            </button>
+                            @csrf
+                        </form>
                     </x-slot>
                 </x-dropdown>
             </div>
