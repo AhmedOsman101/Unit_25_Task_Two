@@ -32,15 +32,16 @@ new #[Layout('layouts.guest')] class extends Component
 
         $this->reset('email');
 
-        session()->flash('status', __($status));
+        // session()->flash('status', __($status));
     }
 }; ?>
 
 <div>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+    <div class="mb-2 text-sm text-gray-300 dark:text-slate-300">
         {{ __('Forgot your password? No problem. Just let us know your email and we will email you a password reset link
         that will allow you to choose a new one.') }}
-        <span class="text-green-700">{{__('If you cannot find the message, try to check your spam/junk inbox.')}}</span>
+
+        <span class="block text-gray-500">{{__('Check your spam inbox if you can\'t find the message.')}}</span>
     </div>
 
     <!-- Session Status -->
