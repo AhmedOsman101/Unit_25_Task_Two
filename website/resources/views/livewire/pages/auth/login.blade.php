@@ -53,7 +53,7 @@ new #[Layout('layouts.main')] class extends Component
                 <div class="text-center">
                     <div class="flex justify-center mx-auto">
                         <a wire:navigate href="{{route('home')}}">
-                            <x-application-logo class="w-auto h-64" />
+                            <x-application-logo class="w-auto h-52" />
                         </a>
                     </div>
 

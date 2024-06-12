@@ -28,19 +28,23 @@ new #[Layout('layouts.main')] class extends Component
         $this->name = trim($this->firstName) . ' ' . trim($this->lastName);
 
         $validated = $this->validate([
+            'firstName' => ['required', 'string', 'max:127'],
+            'lastName' => ['required', 'string', 'max:127'],
             'name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['bail', 'required', 'string', 'lowercase', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
 
+        unset($validated['first_name']);
+        unset($validated['last_name']);
         event(new Registered($user = User::create($validated)));
 
         
         
-        Auth::login($user);
+        Auth::login($user, true);
         
         // logout the admin and make it access the website as a user
         Auth::guard('admin')->logout();
@@ -51,7 +55,7 @@ new #[Layout('layouts.main')] class extends Component
 ?>
 
 <section class="bg-white dark:bg-gray-900">
-    <div class="flex justify-center min-h-screen">
+    <div class="flex justify-center h-screen">
         <img class="hidden object-cover bg-cover lg:block lg:w-2/5 max-h-screen"
             src="{{ asset('images/register.png') }}" alt="register image">
         </img>
@@ -66,14 +70,14 @@ new #[Layout('layouts.main')] class extends Component
                     Let’s get you all set up so you can verify your personal account and begin setting up your profile.
                 </p>
 
-                <form wire:submit="register" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
+                <form wire:submit="register" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2" novalidate>
                     <div>
                         <x-custom-input-label for="firstName" :value="__('FirstName')"
                             class="block mb-2 text-sm text-gray-600 dark:text-gray-200" />
                         <x-text-input wire:model="firstName" id="firstName" placeholder="John"
                             class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                             type="text" name="firstName" required autofocus autocomplete="username" />
-                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('firstName')" class="mt-2" />
                     </div>
 
                     <div>
@@ -82,7 +86,7 @@ new #[Layout('layouts.main')] class extends Component
                         <x-text-input wire:model="lastName" id="lastName" placeholder="Snow"
                             class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                             type="text" name="lastName" required autofocus autocomplete="username" />
-                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('lastName')" class="mt-2" />
                     </div>
 
                     <div>

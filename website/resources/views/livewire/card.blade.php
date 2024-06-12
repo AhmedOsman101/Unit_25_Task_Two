@@ -1,37 +1,40 @@
-<div class="max-w-2xl mx-auto mt-5 flex flex-col items-center relative" style="align-self: normal">
-
+<div>
     @php
     $url = "/$type/$item->id";
+
+    $limit = 82;
+    $string = $item->description;
+    if (strlen($string) > $limit) $string = substr($string, 0, $limit) . '...';
+
+    $baseClass = "flex flex-col overflow-hidden rounded-xl shadow-md";
+
+    if ($type !== 'categories') $baseClass .= " h-[580px]";
     @endphp
-    <div class="bg-gray-800 shadow-md border border-gray-700 rounded-lg max-w-sm">
+    <div class="{{$baseClass}}">
         <a wire:navigate href="{{$url}}">
-            <img class="rounded-t-lg cursor-pointer" src="{{asset('images/service.png')}}" :alt="$type">
+            <img src="{{asset('images/service.png')}}" alt="{{$item->name}}" class="object-cover w-full" />
         </a>
-        <div class="p-5">
-            <a wire:navigate href="{{$url}}">
-                <h5 class="text-white font-bold text-2xl tracking-tight mb-2">{{$item->name}}
-                </h5>
-            </a>
-            @isset($item->description)
-            <p class="text-gray-400 mb-3 border">
-                @php
-                $limit = 80;
-                $string = $item->description;
-                echo (strlen($string) > $limit) ? substr($string, 0, $limit) . '...' : $string . "\n" . str_repeat("&nbsp;", ($limit - strlen($string)));
-                @endphp
-            </p>
-            @endisset
-            <a wire:navigate href="{{$url}}"
-                class="transition-colors duration-500 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                Show more...
-                <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clip-rule="evenodd">
-                    </path>
-                </svg>
-            </a>
+        <div class="flex flex-col justify-between flex-1 p-4 bg-white dark:bg-gray-800">
+            <div>
+                <a wire:navigate href="{{$url}}">
+                    <h2 class="text-white font-semibold text-2xl tracking-tight mb-2 ">{{$item->name}}</h2>
+                </a>
+                <p class="text-gray-500 dark:text-gray-400">
+                    {{$string}}
+                </p>
+            </div>
+            <div class="flex justify-start">
+                <a class="cardBtn mt-2" wire:navigate href="{{$url}}">
+                    Show more...
+                    <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd">
+                        </path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
 </div>
