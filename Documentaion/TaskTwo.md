@@ -220,148 +220,217 @@ The process of requirements gathering ensures that the software solution will me
 
     -   **admin dashboard welcome page:**
         ![](images/adminDashboard.png)
+        <br/>
 
     -   **Requests:**
 
         -   View all Services:
             ![](images/allrequests.png)
+            <br/>
         -   Add new request:
             ![](images/addRequest1.png)
+            <br/>
             ![](images/addrequest2.png)
+            <br/>
         -   Edit cancelled request (disabled):
             ![](images/editcancelledrequest.png)
+            <br/>
         -   Edit completed request:
             ![](images/editcompletedrequest.png)
+            <br/>
         -   Edit pending request (disabled):
             ![](images/editpendingrequest.png)
+            <br/>
         -   Delete request (allowed for all):
             ![](images/deleterequest.png)
+            <br/>
         -   Mass Delete requests:
             ![](images/massrequestdelete.png)
+            <br/>
 
     -   **Services:**
 
         -   View all Services:
             ![](images/allServices.png)
+            <br/>
         -   Add new Service:
             ![](images/addService.png)
+            <br/>
         -   Edit Service:
             ![](images/editService.png)
+            <br/>
         -   Delete Service:
             ![](images/deleteService.png)
+            <br/>
             ![](images/deleteServiceNotify.png)
+            <br/>
         -   Mass Delete Services:
             ![](images/MassDeleteSerivces.png)
+            <br/>
             ![](images/MServiceC.png)
+            <br/>
 
     -   **Categories:**
 
         -   View all Categories:
             ![](images/unsortedservices.png)
+            <br/>
         -   Add new Category:
             ![](images/addCategory.png)
+            <br/>
         -   Edit Category:
             ![](images/editCategory.png)
+            <br/>
         -   Mass Delete Categories:
             ![](images/massDeleteCategories.png)
+            <br/>
 
     -   **Users:**
         -   View all Users:
             ![](images/allUsers.png)
+            <br/>
         -   Add new User:
             ![](images/addUser.png)
+            <br/>
         -   Edit User:
             ![](images/editUser.png)
+            <br/>
         -   Delete User:
             ![](images/deleteUser.png)
+            <br/>
         -   Mass Delete Users:
             ![](images/selectVisibleUsers.png)
+            <br/>
             ![](images/selectAllUsers.png)
+            <br/>
 
     _Examples of admin login:_
 
     ![](images/adminlogin.png)
+    <br/>
 
     _Examples of validation messages:_
     ![](images/adminloginvalidation.png)
+    <br/>
 
     _Examples of customer login:_
 
     ![](images/userlogin.png)
+    <br/>
 
     _Examples of user login validation messages:_
 
     ![](images/userloginvalidation.png)
+    <br />>
+
+    _Examples of user reset password:_
+
+    ![](images/password_reset_1.png)
+    <br/>
+
+    ![](images/password_reset_2.png)
+    <br/>
+
+    ![](images/password_reset_3.png)
+    <br/>
+
+    ![](images/password_reset_4.png)
+    <br/>
 
     _Examples of customer registration:_
 
     ![](images/userregister1.png)
+    <br/>
     ![](images/userregister2.png)
+    <br/>
 
     _Examples of user login validation messages:_
 
     ![](images/userregistervalidation.png)
+    <br/>
 
     _Examples of Landing page:_
 
     ![](images/landing1.png)
+    <br/>
     ![](images/landing2.png)
+    <br/>
 
     _Examples of the services page:_
 
     -   View all services:
         ![](images/services.png)
+        <br/>
     -   View all services (no services available):
         ![](images/noservices.png)
+        <br/>
 
     _Examples of the service details page:_
 
     ![](images/service.png)
+    <br/>
 
     _Examples of the categories page:_
 
     -   View all categories:
         ![](images/categories.png)
+        <br/>
     -   View all categories (no categories available):
         ![](images/nocategories.png)
+        <br/>
 
     _Examples of the services by category page:_
 
     ![](images/category.png)
+    <br/>
 
     _Examples of the user dashboard:_
 
     -   View all requests:
         ![](images/userdashboard1.png)
+        <br/>
     -   View all requests (no requests made yet):
         ![](images/norequests.png)
+        <br/>
     -   Restore cancelled requests:
         ![](images/userdashboard2.png)
+        <br/>
     -   Delete cancelled request:
         ![](images/userdashboard3.png)
+        <br/>
     -   Delete completed request:
         ![](images/userdashboard4.png)
+        <br/>
     -   Edit existing (pending) request:
         ![](images/editrequest.png)
+        <br/>
 
     _Examples of the user profile page:_
 
     -   Edit basic info:
         ![](images/editprofile.png)
+        <br/>
     -   Change password (successful):
         ![](images/changepassword.png)
+        <br/>
     -   Change password (incorrect password):
         ![](images/wrongpassword.png)
+        <br/>
     -   Change password (passwords not matching):
         ![](images/nomatchpassword.png)
+        <br/>
     -   delete account button:
         ![](images/deleteaccount1.png)
+        <br/>
     -   delete account modal:
         ![](images/deleteaccount2.png)
+        <br/>
     -   delete account modal (wrong password):
         ![](images/deleteaccount3.png)
+        <br/>
     -   delete account modal (success redirected to the landing page):
         ![](images/landing1.png)
+        <br/>
 
 ### Implementation Phase:
 
@@ -411,10 +480,13 @@ The process of requirements gathering ensures that the software solution will me
 *   examples on testing using JMeter:
 
     ![](images/image-28.png)
+    <br/>
 
     ![](images/image-29.png)
+    <br/>
 
     ![](images/image-30.png)
+    <br/>
 
 ### Deployment phase:
 
