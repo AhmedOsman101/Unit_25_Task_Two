@@ -3,50 +3,71 @@
 @tailwind utilities;
 
 * {
-    text-decoration: none;
-    text-transform: capitalize;
+	text-decoration: none;
+	text-transform: capitalize;
 }
 
 input {
-    text-transform: initial !important;
+	text-transform: initial !important;
 }
 
 .icon {
-    width: 2em;
-    height: 2em;
-    vertical-align: -0.125em;
+	width: 2em;
+	height: 2em;
+	vertical-align: -0.125em;
 }
 
-@layer components {
-    .inputLabel {
-        @apply block font-medium text-sm text-gray-700 dark:text-gray-300;
-    }
+.inputLabel {
+	@apply block font-medium text-sm text-gray-700 dark:text-gray-300;
+}
 
-    .textInput {
-        @apply border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm;
-    }
+.textInput {
+	@apply border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm;
+}
 
-    .primaryButton {
-        @apply inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150;
-    }
+.primaryButton {
+	@apply inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150;
+}
+
+.cardBody {
+	@apply grid;
+	grid-template-areas:
+		"title title"
+		"desc desc"
+		"btn .";
+
+	grid-template-columns: auto 1fr;
+	align-items: stretch;
+}
+
+.cardTitle {
+	grid-area: title;
+}
+
+.cardDesc {
+	grid-area: desc;
+}
+
+.cardBtn {
+	@apply inline-flex items-center justify-center h-10 transition-colors duration-500 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-4 py-4 text-center cursor-pointer;
 }
 
 .loader {
-    width: 3rem;
-    height: 3rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border-top: 3px solid #fff;
-    border-right: 3px solid transparent;
-    box-sizing: border-box;
-    animation: rotation 0.5s linear infinite;
+	width: 3rem;
+	height: 3rem;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border-top: 3px solid #fff;
+	border-right: 3px solid transparent;
+	box-sizing: border-box;
+	animation: rotation 0.5s linear infinite;
 }
 
 @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
