@@ -11,12 +11,12 @@
     if ($type !== 'categories') $baseClass .= " h-[580px]";
     @endphp
     <div class="{{$baseClass}}">
-        <a wire:navigate href="{{$url}}">
+        <a href="{{$url}}">
             <img src="{{asset('images/service.png')}}" alt="{{$item->name}}" class="object-cover w-full" />
         </a>
         <div class="flex flex-col justify-between flex-1 p-4 bg-white dark:bg-gray-800">
             <div>
-                <a wire:navigate href="{{$url}}">
+                <a href="{{$url}}">
                     <h2 class="text-white font-semibold text-2xl tracking-tight mb-2 ">{{$item->name}}</h2>
                 </a>
                 <p class="text-gray-500 dark:text-gray-400">
@@ -30,7 +30,7 @@
                     comming soon 😊
                 </button>
                 @else
-                <a class="cardBtn mt-2" wire:navigate href="{{$url}}">
+                <a class="cardBtn mt-2" href="{{$url}}">
                     Show more...
                     <svg class="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">

@@ -7,7 +7,6 @@
 @else
 
 <livewire:welcome.navigation />
-<div class="w-full h-24"></div>
 @endif
 
 @if ( count($categories) > 0 )

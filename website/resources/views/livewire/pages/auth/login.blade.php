@@ -52,7 +52,7 @@ new #[Layout('layouts.main')] class extends Component
             <div class="flex-1">
                 <div class="text-center">
                     <div class="flex justify-center mx-auto">
-                        <a wire:navigate href="{{route('home')}}">
+                        <a href="{{route('home')}}">
                             <x-application-logo class="w-auto h-52" />
                         </a>
                     </div>
@@ -83,7 +83,7 @@ new #[Layout('layouts.main')] class extends Component
                                 <x-input-error :messages="$errors->get('form.password')" class="mt-2" />
                                 @if (Route::has('password.request'))
                                 <a class="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline"
-                                    href="{{ route('password.request') }}" wire:navigate>
+                                    href="{{ route('password.request') }}">
                                     {{ __('Forgot your password?') }}
                                 </a>
                                 @endif
@@ -114,7 +114,7 @@ new #[Layout('layouts.main')] class extends Component
                     </form>
 
                     <p class="mt-6 text-sm text-center text-gray-400">Don&#x27;t have an account yet? <a
-                            href="{{ route('register') }}" wire:navigate
+                            href="{{ route('register') }}"
                             class="text-blue-500 focus:outline-none focus:underline hover:underline">Register</a>.</p>
                 </div>
             </div>

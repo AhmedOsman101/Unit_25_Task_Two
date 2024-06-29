@@ -1,6 +1,5 @@
 <section class="grid place-items-center max-h-full h-full dark:text-gray-50 dark:bg-gray-900">
-    <div
-        class="container flex flex-col items-center justify-center px-5 mx-auto space-y-8 text-center sm:max-w-md">
+    <div class="container flex flex-col items-center justify-center px-5 mx-auto space-y-8 text-center sm:max-w-md">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-40 h-40 dark:text-gray-400">
             <path fill="currentColor"
                 d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z">
@@ -14,7 +13,8 @@
             </polygon>
         </svg>
         <p class="text-3xl">Looks like you have no requests made yet</p>
-        <a wire:navigate rel="noopener noreferrer" href="{{route('services')}}"
-            class="px-8 py-3 font-semibold transition-colors duration-500 rounded dark:bg-blue-600 hover:dark:bg-blue-500 dark:text-gray-50">Explore our services</a>
+        <a rel="noopener noreferrer" href="{{route('services')}}"
+            class="px-8 py-3 font-semibold transition-colors duration-500 rounded dark:bg-blue-600 hover:dark:bg-blue-500 dark:text-gray-50">Explore
+            our services</a>
     </div>
 </section>

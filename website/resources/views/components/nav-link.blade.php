@@ -10,6 +10,6 @@ focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gra
 transition duration-150 ease-in-out';
 @endphp
 
-<a wire:navigate {{ $attributes->merge(['class' => $classes]) }}>
+<a {{ $attributes->merge(['class' => $classes]) }}>
     {{ $slot }}
 </a>

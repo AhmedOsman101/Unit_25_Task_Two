@@ -2,8 +2,8 @@
   <td class="p-4 border-b border-blue-gray-50 ">
     <div class="flex items-center gap-3">
       <div class="flex flex-col">
-        <a wire:navigate href="{{'/service/'.$request->service_id}}"
-          class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+        <a href="{{'/service/'.$request->service_id}}"
+          class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal hover:underline">
           {{$request->service->name}}
         </a>
       </div>
@@ -21,8 +21,8 @@
   </td>
   <td class="p-4 border-b border-blue-gray-50">
     <div class="flex flex-col">
-      <a wire:navigate href="{{'/categories/'.$request->service->category_id}}"
-        class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+      <a href="{{'/categories/'.$request->service->category_id}}"
+        class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal hover:underline">
         {{$request->service->category->name}}
       </a>
 
@@ -41,14 +41,14 @@
     @endswitch
   </td>
   <td class="p-4 border-b border-blue-gray-50">
-    <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+    <p class="block text-sm leading-normal text-emerald-400 font-normal">
       $ {{$request->service->price}}
     </p>
   </td>
   <td class="p-2 border-b border-blue-gray-50 ">
     {{-- if pending, show edit button --}}
     @if ($request->status === 'pending')
-    <a wire:navigate href="{{ route('request.edit', $request->id) }}"
+    <a href="{{ route('request.edit', $request->id) }}"
       class="inline-block relative align-middle select-none font-sans font-medium  uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[40px] h-8 max-h-[40px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30"
       type="button">
       <span class="pl-7 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
