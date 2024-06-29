@@ -32,7 +32,7 @@ new #[Layout('layouts.guest')] class extends Component
 
         $this->reset('email');
 
-        // session()->flash('status', __($status));
+        session()->flash('status', __($status));
     }
 }; ?>
 
