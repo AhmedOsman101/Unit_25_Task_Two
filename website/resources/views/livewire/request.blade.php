@@ -2,7 +2,7 @@
   <td class="p-4 border-b border-blue-gray-50 ">
     <div class="flex items-center gap-3">
       <div class="flex flex-col">
-        <a href="{{'/service/'.$request->service_id}}"
+        <a href="{{route('service.show', $request->service_id)}}"
           class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal hover:underline">
           {{$request->service->name}}
         </a>
@@ -21,7 +21,7 @@
   </td>
   <td class="p-4 border-b border-blue-gray-50">
     <div class="flex flex-col">
-      <a href="{{'/categories/'.$request->service->category_id}}"
+      <a href="{{route('categories.show', $request->service->category_id)}}"
         class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal hover:underline">
         {{$request->service->category->name}}
       </a>
@@ -29,7 +29,7 @@
     </div>
   </td>
   <td class="p-4 border-b border-blue-gray-50">
-    @switch($status)
+    @switch($request->status)
     @case('completed')
     <x-completed-state />
     @break

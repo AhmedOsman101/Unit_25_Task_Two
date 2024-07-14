@@ -9,6 +9,6 @@ class Request extends Component {
     public $request;
 
     public function render() {
-        return view('livewire.request', $this->request);
+        return view('livewire.request');
     }
 }

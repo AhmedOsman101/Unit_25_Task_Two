@@ -27,7 +27,6 @@ Route::middleware([AuthenticateUser::class, 'verified'])
 
 Route::middleware(AuthenticateUser::class)->group(
   function () {
-
     Route::view('profile', 'profile')->name('profile');
 
     Route::get('request/{id}', [
@@ -48,7 +47,7 @@ Route::middleware(AuthenticateUser::class)->group(
     Route::get('service/{id}', [
       ServiceController::class,
       'show',
-    ]);
+    ])->name('service.show');
   }
 );
 
