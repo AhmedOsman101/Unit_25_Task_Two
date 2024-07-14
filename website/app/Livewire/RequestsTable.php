@@ -9,11 +9,11 @@ use Livewire\Component;
 class RequestsTable extends Component {
     public $requests;
 
-    public function __construct() {
+    public function mount() {
         $this->requests = RequestModel::all()->where('user_id', Auth::user()->id);
     }
 
     public function render() {
-        return view('livewire.requests-table', $this->requests);
+        return view('livewire.requests-table');
     }
 }
