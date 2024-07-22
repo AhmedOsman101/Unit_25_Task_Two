@@ -1,1 +1,1 @@
-<i class="fa-solid fa-trash-can fa-xl" style="color: #cb3434;"></i>
+<i class="fa-solid fa-trash-can fa-xl text-[#cb3434]"></i>

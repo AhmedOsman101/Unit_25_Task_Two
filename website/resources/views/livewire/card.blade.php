@@ -2,10 +2,6 @@
     @php
     $url = "/$type/$item->id";
 
-    $limit = 78;
-    $string = $item->description;
-    if (strlen($string) > $limit) $string = substr($string, 0, $limit) . '...';
-
     $baseClass = "flex flex-col overflow-hidden rounded-xl shadow-md";
 
     if ($type !== 'categories') $baseClass .= " h-[580px]";
@@ -20,7 +16,7 @@
                     <h2 class="text-white font-semibold text-2xl tracking-tight mb-2 ">{{$item->name}}</h2>
                 </a>
                 <p class="text-gray-500 dark:text-gray-400">
-                    {{$string}}
+                    {{Str::limit($item->description, 78)}}
                 </p>
             </div>
             <div class="flex justify-start">

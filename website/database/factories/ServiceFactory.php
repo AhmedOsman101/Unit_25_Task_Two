@@ -26,8 +26,8 @@ class ServiceFactory extends Factory {
         return [
             'name' => $this->faker->words(2, true),
             'description' => $this->faker->bs(),
-            'price' => $this->faker->randomFloat(2, 50, 1000), // prices between $50 and $500
-            'category_id' => random_int(1, 10),
+            'price' => $this->faker->randomFloat(2, 50, 1000), // prices between $50 and $500 with 2 decimal point.
+            'category_id' => Category::inRandomOrder()->first()->id,
         ];
     }
 }
