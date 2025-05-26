@@ -1,5 +1,3 @@
-# Unit 25 - Task Two
-
 # Comprehensive Proposal and Development Documentation for Dern-Support
 
 ## Business Context and Summary of the Problem
